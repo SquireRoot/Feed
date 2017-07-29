@@ -7,21 +7,23 @@ import java.net.URL;
  */
 
 public class Post {
-    // post title
+    private int chronid;
+    private String id;
     private String title;
-    // image url
-    URL imageURL;
+    private URL imageURL;
+    private URL thumbnailURL;
     // image
+
 
     public Post() {
 
     }
 
-    public loadData() {
+    public boolean loadData() {
         // load the image into cache
     }
 
-    public unloadData() {
+    public boolean unloadData() {
         // delete image cache
     }
 }
