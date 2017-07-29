@@ -9,7 +9,6 @@ import java.util.Hashtable;
 public class DatabaseManager {
     private int chronend;
     private Hashtable<String, Post> database;
-    private 
 
     public DatabaseManager() {
         database = new Hashtable<>();
@@ -23,7 +22,7 @@ public class DatabaseManager {
 
     }
 
-    public int setEnd(int endnum) {
+    public void setEnd(int endnum) {
         int diff = endnum - chronend;
 
         getNewPosts(diff);
