@@ -1,6 +1,6 @@
 package com.bogus.evannewman.feed;
 
-import java.util.Hashtable;
+import java.util.ArrayList;
 
 /**
  * Created by Evan Newman on 7/29/2017.
@@ -8,27 +8,26 @@ import java.util.Hashtable;
 
 public class DatabaseManager {
     private int chronend;
-    private Hashtable<String, Post> database;
+    private final int maxloadedposts = 100;
+    private ArrayList<Post> database;
 
     public DatabaseManager() {
-        database = new Hashtable<>();
+        database = new ArrayList<>();
     }
 
-    public void getNewPosts(int chrondelta) {
+    public Post getPost(int chronnum) {
+        if (chronnum >= database.size()) {
+            for (int i = 0; i < (chronnum - database.size() - 2); i++) {
+                //get a new post
 
-    }
-
-    public void unloadOldPosts(int chrondelta) {
-
-    }
-
-    public void setEnd(int endnum) {
-        int diff = endnum - chronend;
-
-        getNewPosts(diff);
-        unloadOldPosts(diff);
-
-        chronend = endnum;
+                database.add()
+            }
+            // load new post and add it
+        } else {
+            synchronized (database) {
+                return database.get(chronnum);
+            }
+        }
     }
 
 }
